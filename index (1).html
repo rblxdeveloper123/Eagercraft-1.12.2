@@ -1,0 +1,124 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>大傻逼client</title>
+  <style>
+    body {
+      margin: 0;
+      background-color: #1e1e1e;
+      font-family: Minecraftia, monospace;
+      color: white;
+      overflow: hidden;
+    }
+
+    #main-menu {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-image: url('background.jpg');
+      background-size: cover;
+      background-position: center;
+      position: relative;
+    }
+
+    #logo {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      font-size: 32px;
+      font-family: Minecraftia, monospace;
+      color: cyan;
+      text-shadow: 2px 2px #000;
+    }
+
+    #menu-buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .menu-button {
+      background: #444;
+      color: white;
+      padding: 10px 20px;
+      border: 2px solid #888;
+      font-size: 16px;
+      cursor: pointer;
+      text-align: center;
+    }
+
+    .menu-button:hover {
+      background: #666;
+    }
+
+    #profile-panel {
+      position: absolute;
+      right: 20px;
+      top: 60px;
+      width: 110px;
+      text-align: center;
+      background: rgba(0, 0, 0, 0.5);
+      padding: 8px;
+      border-radius: 6px;
+      font-family: Minecraftia, monospace;
+      color: white;
+      z-index: 10;
+    }
+
+    #player-name {
+      margin-bottom: 6px;
+      font-size: 12px;
+    }
+
+    #player-avatar {
+      width: 64px;
+      height: 64px;
+      margin: 0 auto 6px auto;
+      background-image: url("textures/entity/steve.png");
+      background-size: cover;
+      image-rendering: pixelated;
+      border: 2px solid white;
+    }
+
+    #customize-button {
+      background: #333;
+      color: white;
+      border: 1px solid gray;
+      padding: 4px;
+      cursor: pointer;
+      font-size: 10px;
+      font-family: Minecraftia, monospace;
+    }
+  </style>
+</head>
+<body>
+  <div id="main-menu">
+    <div id="logo">大傻逼client</div>
+    <div id="menu-buttons">
+      <div class="menu-button">Singleplayer</div>
+      <div class="menu-button">Multiplayer</div>
+      <div class="menu-button">Options</div>
+      <div class="menu-button">Quit Game</div>
+    </div>
+    <div id="profile-panel">
+      <div id="player-name">Player</div>
+      <div id="player-avatar"></div>
+      <button id="customize-button" onclick="openSkinMenu()">customize</button>
+    </div>
+  </div>
+
+  <script>
+    function openSkinMenu() {
+      if (typeof EaglercraftX !== 'undefined' && EaglercraftX.mainMenu) {
+        EaglercraftX.mainMenu.openSkinCustomizationScreen();
+      } else {
+        alert("Skin customization is not available.");
+      }
+    }
+  </script>
+</body>
+</html>
